@@ -1,5 +1,5 @@
 BOX_IMAGE = "generic/debian11"
-NODE_COUNT = 2
+WORKERS = 2
 
 Vagrant.configure("2") do |config|
 
@@ -16,7 +16,7 @@ Vagrant.configure("2") do |config|
   end
 
   # workers
-  (1..NODE_COUNT).each do |i|
+  (1..WORKERS).each do |i|
     config.vm.define "k3s-worker-#{i}" do |node|
       node.vm.box = BOX_IMAGE
       node.vm.hostname = "k3s-worker-#{i}"
@@ -27,5 +27,10 @@ Vagrant.configure("2") do |config|
         vb.customize ["modifyvm", :id, "--nested-hw-virt", "on"]
       end
     end
+  end
+
+  # provisioning
+  config.vm.provision "ansible" do |ansible|
+    ansible.playbook = "playbook.yml"
   end
 end
