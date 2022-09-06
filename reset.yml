@@ -2,10 +2,10 @@
   gather_facts: no
   become: yes
   roles:
-    - role: k3s-master
+    - role: k3s-master-reset
 
 - hosts: all:!k3s-node-0
   gather_facts: no
   become: yes
   roles:
-    - role: k3s-worker
+    - role: k3s-worker-reset
