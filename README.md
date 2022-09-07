@@ -87,7 +87,11 @@ ansible-playbook reset.yml site.yml
 
 ### Kubernetes Dashboard
 
-Pending feature...
+Work in progress...
+
+### Portainer
+
+Work in progress...
 
 [virtualbox]: https://www.virtualbox.org/
 [vagrant]: https://www.vagrantup.com/

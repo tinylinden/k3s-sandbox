@@ -1,8 +1,8 @@
-- name: Read node ip
+- name: read node ip
   shell:
     cmd: hostname --ip-address
   register: node_ip
 
-- name: Install k3s (worker)
+- name: install k3s
   shell:
     cmd: curl -sfL https://get.k3s.io | INSTALL_K3S_EXEC="--node-ip {{ node_ip.stdout }} --flannel-iface eth1" K3S_URL="{{ hostvars['k3s-node-0']['k3s_url'] }}" K3S_TOKEN="{{ hostvars['k3s-node-0']['k3s_token'] }}" sh -
