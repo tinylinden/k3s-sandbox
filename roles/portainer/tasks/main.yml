@@ -1,0 +1,7 @@
+- name: add portainer chart repo
+  shell:
+    cmd: helm repo add portainer https://portainer.github.io/k8s/
+
+- name: install portainer exposed via load balancer
+  shell:
+    cmd: helm --kubeconfig ~{{ ansible_user }}/.kube/config install --create-namespace -n portainer portainer portainer/portainer --set service.type=LoadBalancer
