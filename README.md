@@ -56,16 +56,16 @@ and waiting few minutes. If the job is dane without any errors, virtual machines
 should be created and provisioned. And cluster state can be verified with:
 
 ```
-vagrant ssh k3s-node-0 -- 'kubectl get nodes'
+vagrant ssh k3s-node-0 -- 'kubectl get nodes -o wide'
 ```
 
 which should return something like:
 
 ```
-NAME         STATUS   ROLES                  AGE   VERSION
-k3s-node-1   Ready    <none>                 22s   v1.24.4+k3s1
-k3s-node-2   Ready    <none>                 21s   v1.24.4+k3s1
-k3s-node-0   Ready    control-plane,master   48s   v1.24.4+k3s1
+NAME         STATUS   ROLES                  AGE   VERSION        INTERNAL-IP      EXTERNAL-IP      OS-IMAGE                         KERNEL-VERSION    CONTAINER-RUNTIME
+k3s-node-1   Ready    <none>                 41s   v1.24.4+k3s1   192.168.56.101   192.168.56.101   Debian GNU/Linux 11 (bullseye)   5.10.0-17-amd64   containerd://1.6.6-k3s1
+k3s-node-2   Ready    <none>                 41s   v1.24.4+k3s1   192.168.56.102   192.168.56.102   Debian GNU/Linux 11 (bullseye)   5.10.0-17-amd64   containerd://1.6.6-k3s1
+k3s-node-0   Ready    control-plane,master   64s   v1.24.4+k3s1   192.168.56.100   192.168.56.100   Debian GNU/Linux 11 (bullseye)   5.10.0-17-amd64   containerd://1.6.6-k3s1
 ```
 
 ### When the mess creeps in
