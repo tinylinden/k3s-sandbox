@@ -89,16 +89,14 @@ ansible-playbook reset.yml site.yml
 ### Show me the dashboard
 
 [Portainer][portainer] can be installed with any option described in
-[docs][portainer-install] or with Ansible playbook (which will expose 
-Portainer instance with load balancer):
+[docs][portainer-install] or with Ansible playbook:
 
 ```
 ansible-playbook portainer.yml
 ```
 
-When installation is complete, Portainer instance can be accessed by navigating
-web browser to http://192.168.56.100:9000 (any node IP can be used with port 9000
-for HTTP and 9443 for HTTPS).
+When installation is complete, Portainer can be accessed by navigating
+web browser to http://192.168.56.100:9000.
 
 [virtualbox]: https://www.virtualbox.org/
 [vagrant]: https://www.vagrantup.com/
