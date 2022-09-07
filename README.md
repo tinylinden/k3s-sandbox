@@ -86,11 +86,7 @@ and installed again with Ansible:
 ansible-playbook reset.yml site.yml
 ```
 
-### Kubernetes Dashboard
-
-Work in progress...
-
-### Portainer
+### Show me the dashboard
 
 Work in progress...
 
@@ -99,4 +95,3 @@ Work in progress...
 [ansible]: https://www.ansible.com/
 [minikube]: https://minikube.sigs.k8s.io/docs/
 [k3s]: https://k3s.io/
-[kubernetes-dashboard]: https://github.com/kubernetes/dashboard
