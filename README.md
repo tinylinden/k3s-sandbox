@@ -67,16 +67,10 @@ k3s-node-1                running (virtualbox)
 k3s-node-2                running (virtualbox)
 ```
 
-K3s cluster state can be verified by connecting to master node with:
+K3s cluster state can be verified with:
 
 ```
-vagrant ssh k3s-node-0
-```
-
-and executing:
-
-```
-kubectl get nodes
+vagrant ssh k3s-node-0 -- 'kubectl get nodes'
 ```
 
 which should return something like:
@@ -97,19 +91,13 @@ everything can be destroyed:
 vagrant destroy -f
 ```
 
-and recreated from scratch:
-
-```
-vagrant up
-```
-
 But destroying and creating virtual machines can take few minutes. If you do
 not want to wait that long, and there is no problem with the virtual machine
 or guest operating system, but K3s cluster itself it can be quickly purged 
 and installed again with Ansible:
 
 ```
-ansible-playbook -i .vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory reset.yml site.yml
+ansible-playbook reset.yml site.yml
 ```
 
 ### Kubernetes Dashboard
