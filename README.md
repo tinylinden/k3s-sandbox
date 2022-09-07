@@ -91,10 +91,16 @@ k3s-node-0   Ready    control-plane,master   48s   v1.24.4+k3s1
 #### When the mess creeps in
 
 When something really bad happens to the cluster or you want to start fresh -
-everything can be destroyed and recreated from scratch (with `vagrant up`):
+everything can be destroyed:
 
 ```
 vagrant destroy -f
+```
+
+and recreated from scratch:
+
+```
+vagrant up
 ```
 
 But destroying and creating virtual machines can take few minutes. If you do
