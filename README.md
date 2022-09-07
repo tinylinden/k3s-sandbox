@@ -2,8 +2,8 @@
 
 [![k3s-sandbox.jpg](docs/k3s-sandbox.jpg)](https://unsplash.com/photos/2FaCKyEEtis)
 
-[![Stability: Experimental](https://masterminds.github.io/stability/experimental.svg)](https://masterminds.github.io/stability/experimental.html)
-![platform/linux-64](https://img.shields.io/badge/platform-linux--64-lightgrey)
+[![stability: experimental](https://masterminds.github.io/stability/experimental.svg)](https://masterminds.github.io/stability/experimental.html)
+![platform: linux-64](https://img.shields.io/badge/platform-linux--64-lightgrey)
 
 > \- You can't solve a problem just by saying techy things.  
 > \- Kubernetes.
@@ -22,7 +22,8 @@ with [Vagrant][vagrant] and [Ansible][ansible] to create my very own, naive
 ## Usage 
 
 By default three virtual machines (nodes) will be created - master and two
-workers. That count can be changed by setting `WORKERS_COUNT` in `Vagrantfile`, mind that total nodes count is equal to workers count + 1 (as there is always
+workers. That count can be changed by setting `WORKERS_COUNT` in `Vagrantfile`,
+mind that total nodes count is equal to workers count + 1 (as there is always
 `k3s-node-0` acting as master).
 
 All nodes are named according to the scheme - `k3s-node-N`, where `N` is the
@@ -47,7 +48,7 @@ Download and install:
 
 It's as simple as calling:
 
-```console
+```
 vagrant up
 ```
 
