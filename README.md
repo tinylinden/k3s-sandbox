@@ -7,7 +7,7 @@
 > \- You can't solve a problem just by saying techy things.  
 > \- Kubernetes.
 
-### Motivation
+## Motivation
 
 I just needed a local Kubernetes cluster to play with. I know that one can be
 quickly set up with [minikube][minikube], but where is the fun with simple
@@ -18,7 +18,7 @@ set it up and tear it down with a single command. So I decided to experiment
 with [Vagrant][vagrant] and [Ansible][ansible] to create my very own, naive
 [K3s][k3s] three node cluster running inside [VirtualBox][virtualbox].
 
-### Usage 
+## Usage 
 
 By default three virtual machines (nodes) will be created - master and two
 workers. That count can be changed by setting `WORKERS_COUNT` in `Vagrantfile`, mind that total nodes count is equal to workers count + 1 (as there is always
@@ -31,7 +31,7 @@ addressing scheme may be affected by VirtualBox networking settings).
 
 ![k3s-nodes](docs/k3s-nodes.png)
 
-#### Prerequisites
+### Prerequisites
 
 All was developed and tested on Debian GNU/Linux 11 (bullseye) x86_64, but
 I see no reason why it shouldn't work on any other Linux distro. 
@@ -42,7 +42,7 @@ Download and install:
 - [Vagrant][vagrant]
 - [Ansible][ansible]
 
-#### From nothing to running cluster
+### From nothing to running cluster
 
 It's as simple as calling:
 
@@ -88,7 +88,7 @@ k3s-node-2   Ready    <none>                 21s   v1.24.4+k3s1
 k3s-node-0   Ready    control-plane,master   48s   v1.24.4+k3s1
 ```
 
-#### When the mess creeps in
+### When the mess creeps in
 
 When something really bad happens to the cluster or you want to start fresh -
 everything can be destroyed:
@@ -112,8 +112,13 @@ and installed again with Ansible:
 ansible-playbook -i .vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory reset.yml site.yml
 ```
 
+### Kubernetes Dashboard
+
+Pending feature...
+
 [virtualbox]: https://www.virtualbox.org/
 [vagrant]: https://www.vagrantup.com/
 [ansible]: https://www.ansible.com/
 [minikube]: https://minikube.sigs.k8s.io/docs/
 [k3s]: https://k3s.io/
+[kubernetes-dashboard]: https://github.com/kubernetes/dashboard
