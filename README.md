@@ -14,8 +14,8 @@ I just needed a local Kubernetes cluster to play with. I know that one can be
 quickly set up with [minikube][minikube], but where is the fun with simple
 `minikube start`?
 
-The cluster is going to be used for experiments, so there must be a way to
-set it up and tear it down with a single command. So I decided to experiment
+It is going to be used for experiments, so there must be a way to
+set it up and tear it down with a single command. I decided to experiment
 with [Vagrant][vagrant] and [Ansible][ansible] to create my very own, naive
 [K3s][k3s] three node cluster running inside [VirtualBox][virtualbox].
 
