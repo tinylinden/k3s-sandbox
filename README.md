@@ -52,8 +52,8 @@ It's as simple as calling:
 vagrant up
 ```
 
-and waiting few minutes. If the job is dane without any errors, virtual machines
-should be created and provisioned. And cluster state can be verified with:
+and waiting few minutes. If the job is finished without errors, virtual machines
+should be created and provisioned. And cluster state can be checked with:
 
 ```
 vagrant ssh k3s-node-0 -- 'kubectl get nodes -o wide'
@@ -88,10 +88,33 @@ ansible-playbook reset.yml site.yml
 
 ### Show me the dashboard
 
-Work in progress...
+[Portainer][portainer] can be installed with Helm (all available options were described
+in [Portainer docs][portainer-install]) on master node:
+
+```
+vagrant ssh k3s-node-0
+```
+
+Add the Portainer Helm repository by running:
+
+```
+helm repo add portainer https://portainer.github.io/k8s/
+```
+
+Using the following command, Portainer will be available at an assigned 
+Load Balancer IP on port 9000 for HTTP and 9443 for HTTPS:
+
+```
+helm install --create-namespace -n portainer portainer portainer/portainer --set service.type=LoadBalancer
+```
+
+Now that the installation is complete, you can log into your Portainer instance. 
+Open a web browser and navigate to http://192.168.56.100:9000.
 
 [virtualbox]: https://www.virtualbox.org/
 [vagrant]: https://www.vagrantup.com/
 [ansible]: https://www.ansible.com/
 [minikube]: https://minikube.sigs.k8s.io/docs/
 [k3s]: https://k3s.io/
+[portainer]: https://www.portainer.io/
+[portainer-install]: https://docs.portainer.io/v/ce-2.9/start/install/server/kubernetes/baremetal

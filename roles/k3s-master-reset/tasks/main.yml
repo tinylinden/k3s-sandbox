@@ -2,7 +2,26 @@
   shell:
     cmd: k3s-uninstall.sh
 
+- name: remove directory .kube
+  file:
+    path: ~{{ ansible_user }}/.kube
+    state: absent
+
 - name: uninstall helm
   shell:
     cmd: rm -f /usr/local/bin/helm
-   
+
+- name: remove helm cache
+  file:
+    path: ~{{ ansible_user }}/.cache/helm
+    state: absent
+
+- name: remove helm config
+  file:
+    path: ~{{ ansible_user }}/.config/helm
+    state: absent
+
+- name: remove helm data and plugins
+  file:
+    path: ~{{ ansible_user }}/.local/share/helm
+    state: absent

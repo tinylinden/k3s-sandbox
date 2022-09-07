@@ -21,6 +21,21 @@
     k3s_url: "https://{{ node_ip.stdout }}:6443"
     k3s_token: "{{ node_token.content | b64decode | regex_replace('\n', '') }}"
 
+- name: create directory .kube
+  file:
+    path: ~{{ ansible_user }}/.kube
+    state: directory
+    owner: "{{ ansible_user }}"
+    mode: "u=rwx,g=rx,o="
+
+- name: copy config file to user home directory
+  copy:
+    src: /etc/rancher/k3s/k3s.yaml
+    dest: ~{{ ansible_user }}/.kube/config
+    remote_src: yes
+    owner: "{{ ansible_user }}"
+    mode: "u=rw,g=,o="
+
 - name: install helm
   shell:
     cmd: curl -sfL https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash -
