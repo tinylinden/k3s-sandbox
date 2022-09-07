@@ -31,7 +31,8 @@ node number. And IP address assigned to `eth1` network interface attached to
 to VirtualBox private network is set to `192.168.56.(100 + N)` (mind that this
 addressing scheme may be affected by VirtualBox networking settings).
 
-![k3s-nodes](docs/k3s-nodes.png)
+![k3s-nodes](docs/light/k3s-nodes.png#gh-light-mode-only)
+![k3s-nodes](docs/dark/k3s-nodes.png#gh-dark-mode-only)
 
 ### Prerequisites
 
