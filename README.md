@@ -106,18 +106,10 @@ vagrant up
 But destroying and creating virtual machines can take few minutes. If you do
 not want to wait that long, and there is no problem with the virtual machine
 or guest operating system, but K3s cluster itself it can be quickly purged 
-and installed again with Ansible playbooks.
-
-Uninstall K3s with:
+and installed again with Ansible playbook:
 
 ```
-ansible-playbook -i .vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory reset.yml
-```
-
-and install it again with:
-
-```
-ansible-playbook -i .vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory site.yml
+ansible-playbook -i .vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory reset.yml site.yml
 ```
 
 [virtualbox]: https://www.virtualbox.org/
