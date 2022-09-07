@@ -1,5 +1,6 @@
 BOX_IMAGE = "generic/debian11"
 WORKERS_COUNT = 2
+NODE_MEMORY = "2048"
 
 Vagrant.configure("2") do |config|
 
@@ -10,7 +11,7 @@ Vagrant.configure("2") do |config|
       node.vm.network :private_network, ip: "192.168.56.#{100 + node_no}", hostname: true
       node.vm.provider :virtualbox do |vb|
         vb.name = "k3s-node-#{node_no}"
-        vb.memory = "2048"
+        vb.memory = NODE_MEMORY
         vb.customize ["modifyvm", :id, "--nested-hw-virt", "on"]
       end
 
