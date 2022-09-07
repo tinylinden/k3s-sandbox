@@ -51,23 +51,7 @@ vagrant up
 ```
 
 and waiting few minutes. If the job is dane without any errors, virtual machines
-should be created and provisioned. Virtual machines state can be verified with:
-
-```
-vagrant status
-```
-
-which should return something like:
-
-```
-Current machine states:
-
-k3s-node-0                running (virtualbox)
-k3s-node-1                running (virtualbox)
-k3s-node-2                running (virtualbox)
-```
-
-K3s cluster state can be verified with:
+should be created and provisioned. Which can be verified with:
 
 ```
 vagrant ssh k3s-node-0 -- 'kubectl get nodes'
@@ -85,7 +69,7 @@ k3s-node-0   Ready    control-plane,master   48s   v1.24.4+k3s1
 ### When the mess creeps in
 
 When something really bad happens to the cluster or you want to start fresh -
-everything can be destroyed:
+everything can be destroyed with a single command:
 
 ```
 vagrant destroy -f
@@ -93,7 +77,7 @@ vagrant destroy -f
 
 But destroying and creating virtual machines can take few minutes. If you do
 not want to wait that long, and there is no problem with the virtual machine
-or guest operating system, but K3s cluster itself it can be quickly purged 
+or guest operating system but K3s cluster itself - it can be quickly purged 
 and installed again with Ansible:
 
 ```
