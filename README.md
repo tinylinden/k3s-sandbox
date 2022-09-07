@@ -47,12 +47,12 @@ Download and install:
 
 It's as simple as calling:
 
-```
+```console
 vagrant up
 ```
 
 and waiting few minutes. If the job is dane without any errors, virtual machines
-should be created and provisioned. Which can be verified with:
+should be created and provisioned. And cluster state can be verified with:
 
 ```
 vagrant ssh k3s-node-0 -- 'kubectl get nodes'
@@ -78,7 +78,7 @@ vagrant destroy -f
 
 But destroying and creating virtual machines can take few minutes. If you do
 not want to wait that long, and there is no problem with the virtual machine
-or guest operating system but K3s cluster itself - it can be quickly purged 
+or guest operating system but the cluster itself - it can be quickly purged 
 and installed again with Ansible:
 
 ```
