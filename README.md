@@ -3,6 +3,7 @@
 [![k3s-sandbox.jpg](docs/k3s-sandbox.jpg)](https://unsplash.com/photos/2FaCKyEEtis)
 
 [![Stability: Experimental](https://masterminds.github.io/stability/experimental.svg)](https://masterminds.github.io/stability/experimental.html)
+![platform/linux-64](https://img.shields.io/badge/platform-linux--64-lightgrey)
 
 > \- You can't solve a problem just by saying techy things.  
 > \- Kubernetes.
@@ -34,7 +35,7 @@ addressing scheme may be affected by VirtualBox networking settings).
 ### Prerequisites
 
 All was developed and tested on Debian GNU/Linux 11 (bullseye) x86_64, but
-I see no reason why it shouldn't work on any other Linux distro. 
+I see no reason why it shouldn't work on any other distro. 
 
 Download and install:
 
