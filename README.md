@@ -45,15 +45,20 @@ Download and install:
 #### From nothing to running cluster
 
 It's as simple as calling:
+
 ```
 vagrant up
 ```
+
 and waiting few minutes. If the job is dane without any errors, virtual machines
-should be created and provisioned. You can verify virtual machine states with:
+should be created and provisioned. Virtual machines state can be verified with:
+
 ```
 vagrant status
 ```
+
 which should return something like:
+
 ```
 Current machine states:
 
@@ -61,20 +66,52 @@ k3s-node-0                running (virtualbox)
 k3s-node-1                running (virtualbox)
 k3s-node-2                running (virtualbox)
 ```
+
 K3s cluster state can be verified by connecting to master node with:
+
 ```
 vagrant ssh k3s-node-0
 ```
+
 and executing:
+
 ```
 kubectl get nodes
 ```
+
 which should return something like:
+
 ```
 NAME         STATUS   ROLES                  AGE   VERSION
-k3s-node-1   Ready    <none>                 21m   v1.24.4+k3s1
-k3s-node-2   Ready    <none>                 21m   v1.24.4+k3s1
-k3s-node-0   Ready    control-plane,master   22m   v1.24.4+k3s1
+k3s-node-1   Ready    <none>                 22s   v1.24.4+k3s1
+k3s-node-2   Ready    <none>                 21s   v1.24.4+k3s1
+k3s-node-0   Ready    control-plane,master   48s   v1.24.4+k3s1
+```
+
+#### When the mess creeps in
+
+When something really bad happens to the cluster or you want to start fresh -
+everything can be destroyed and recreated from scratch (with `vagrant up`):
+
+```
+vagrant destroy -f
+```
+
+But destroying and creating virtual machines can take few minutes. If you do
+not want to wait that long, and there is no problem with the virtual machine
+or guest operating system, but K3s cluster itself it can be quickly purged 
+and installed again with Ansible playbooks.
+
+K3s can be uninstalled with:
+
+```
+ansible-playbook -i .vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory reset.yml
+```
+
+and installed again with:
+
+```
+ansible-playbook -i .vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory site.yml
 ```
 
 [virtualbox]: https://www.virtualbox.org/
