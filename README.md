@@ -108,13 +108,13 @@ not want to wait that long, and there is no problem with the virtual machine
 or guest operating system, but K3s cluster itself it can be quickly purged 
 and installed again with Ansible playbooks.
 
-K3s can be uninstalled with:
+Uninstall K3s with:
 
 ```
 ansible-playbook -i .vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory reset.yml
 ```
 
-and installed again with:
+and install it again with:
 
 ```
 ansible-playbook -i .vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory site.yml
