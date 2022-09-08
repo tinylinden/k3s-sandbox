@@ -4,4 +4,13 @@
 
 - name: install portainer exposed via load balancer
   shell:
-    cmd: helm --kubeconfig ~{{ ansible_user }}/.kube/config install --create-namespace -n portainer portainer portainer/portainer --set service.type=LoadBalancer
+    cmd: helm install --create-namespace -n portainer portainer portainer/portainer --set service.type=LoadBalancer
+
+- name: read node ip
+  shell:
+    cmd: hostname --ip-address
+  register: node_ip
+
+- name: show portainer url
+  debug:
+    msg: "http://{{ node_ip.stdout }}:9000"

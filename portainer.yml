@@ -1,5 +1,5 @@
 - hosts: k3s-node-0
   gather_facts: no
-  become: yes
+  become: no
   roles:
     - role: portainer
