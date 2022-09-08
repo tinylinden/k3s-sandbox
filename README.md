@@ -28,7 +28,7 @@ mind that total nodes count is equal to workers count + 1 (as there is always
 
 All nodes are named according to the scheme - `k3s-node-N`, where `N` is the
 node number. And IP address assigned to `eth1` network interface attached to
-to VirtualBox private network is set to `192.168.56.(100 + N)` (mind that this
+VirtualBox private network is set to `192.168.56.(100 + N)` (mind that this
 addressing scheme may be affected by VirtualBox networking settings).
 
 ![k3s-nodes](docs/light/k3s-nodes.png#gh-light-mode-only)
@@ -89,8 +89,7 @@ ansible-playbook reset.yml site.yml
 
 ### Show me the dashboard
 
-[Portainer][portainer] can be installed with any option described in
-[docs][portainer-install] or with Ansible playbook:
+[Portainer][portainer] can be installed with with Ansible:
 
 ```
 ansible-playbook portainer.yml
@@ -105,4 +104,3 @@ web browser to http://192.168.56.100:9000.
 [minikube]: https://minikube.sigs.k8s.io/docs/
 [k3s]: https://k3s.io/
 [portainer]: https://www.portainer.io/
-[portainer-install]: https://docs.portainer.io/v/ce-2.9/start/install/server/kubernetes/baremetal
