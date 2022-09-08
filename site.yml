@@ -2,10 +2,12 @@
   gather_facts: no
   become: yes
   roles:
+    - role: avahi
     - role: k3s-master
 
 - hosts: all:!k3s-node-0
   gather_facts: no
   become: yes
   roles:
+    - role: avahi
     - role: k3s-worker

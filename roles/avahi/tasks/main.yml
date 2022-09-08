@@ -1,0 +1,6 @@
+- name: install avahi
+  apt:
+    update_cache: yes
+    pkg:
+      - avahi-daemon
+      - libnss-mdns

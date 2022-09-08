@@ -95,8 +95,24 @@ ansible-playbook reset.yml site.yml
 ansible-playbook portainer.yml
 ```
 
-When installation is complete, Portainer can be accessed by navigating
-web browser to http://192.168.56.100:9000.
+Installation state can be checked with:
+
+```
+vagrant ssh k3s-node-0 -- 'kubectl get pods -n portainer'
+```
+
+when result shows that pod is ready:
+
+```
+NAME                        READY   STATUS    RESTARTS   AGE
+portainer-5d4958459-s66fl   1/1     Running   0          34s
+
+```
+
+Portainer can be accessed by navigating web browser to:
+
+- http://192.168.56.100:9000
+- http://k3s-node-0.local:9000 if [Avahi][avahi] is running on host system
 
 [virtualbox]: https://www.virtualbox.org/
 [vagrant]: https://www.vagrantup.com/
@@ -104,3 +120,4 @@ web browser to http://192.168.56.100:9000.
 [minikube]: https://minikube.sigs.k8s.io/docs/
 [k3s]: https://k3s.io/
 [portainer]: https://www.portainer.io/
+[avahi]: https://www.avahi.org/

@@ -11,6 +11,13 @@
     cmd: hostname --ip-address
   register: node_ip
 
+- name: read node hostname
+  shell:
+    cmd: hostname
+  register: node_hostname
+
 - name: show portainer url
   debug:
-    msg: "http://{{ node_ip.stdout }}:9000"
+    msg: 
+    - "http://{{ node_ip.stdout }}:9000"
+    - "http://{{ node_hostname.stdout }}.local:9000"
