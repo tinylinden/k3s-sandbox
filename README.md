@@ -32,8 +32,7 @@ VirtualBox private network is set to `192.168.56.(100 + N)`.
 
 > **NOTE:** If there is already host-only interface assigned to 192.168.56.0/24
 > address space, there can be some connectivity problems between virtual
-> machines created by Vagrant ([#1][issue-1]). Remove such host-only interface
-> in _VirtualBox Manager_ or change addressing scheme in `Vagrantfile`.
+> machines created by Vagrant ([#1][issue-1]).
 
 ![k3s-nodes](docs/light/k3s-nodes.png#gh-light-mode-only)
 ![k3s-nodes](docs/dark/k3s-nodes.png#gh-dark-mode-only)
