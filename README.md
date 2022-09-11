@@ -28,8 +28,12 @@ mind that total nodes count is equal to workers count + 1 (as there is always
 
 All nodes are named according to the scheme - `k3s-node-N`, where `N` is the
 node number. And IP address assigned to `eth1` network interface attached to
-VirtualBox private network is set to `192.168.56.(100 + N)` (mind that this
-addressing scheme may be affected by VirtualBox networking settings).
+VirtualBox private network is set to `192.168.56.(100 + N)`.
+
+> **NOTE:** If there is already host-only interface assigned to 192.168.56.0/24
+> address space, there can be some connectivity problems between virtual
+> machines created by Vagrant ([#1][issue-1]). Remove such host-only interface
+> in _VirtualBox Manager_ or change addressing scheme in `Vagrantfile`.
 
 ![k3s-nodes](docs/light/k3s-nodes.png#gh-light-mode-only)
 ![k3s-nodes](docs/dark/k3s-nodes.png#gh-dark-mode-only)
@@ -89,7 +93,7 @@ ansible-playbook reset.yml site.yml
 
 ### Show me the dashboard
 
-[Portainer][portainer] can be installed with with Ansible:
+[Portainer][portainer] can be installed with Ansible:
 
 ```
 ansible-playbook portainer.yml
@@ -120,3 +124,5 @@ Portainer UI can be accessed by navigating web browser to:
 [k3s]: https://k3s.io/
 [portainer]: https://www.portainer.io/
 [avahi]: https://www.avahi.org/
+
+[issue-1]: https://github.com/tinylinden/k3s-sandbox/issues/1
