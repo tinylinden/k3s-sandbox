@@ -5,8 +5,8 @@
 [![stability: experimental](https://masterminds.github.io/stability/experimental.svg)](https://masterminds.github.io/stability/experimental.html)
 ![platform: linux-64](https://img.shields.io/badge/platform-linux--64-lightgrey)
 
-> \- You can't solve a problem just by saying techy things.  
-> \- Kubernetes.
+> -- You can't solve a problem just by saying techy things.  
+> -- Kubernetes.
 
 ## Motivation
 
