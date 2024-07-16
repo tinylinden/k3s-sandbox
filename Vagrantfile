@@ -1,4 +1,4 @@
-BOX_IMAGE = "generic/debian11"
+BOX_IMAGE = "generic/debian12"
 WORKERS_COUNT = 2
 NODE_MEMORY = "2048"
 
