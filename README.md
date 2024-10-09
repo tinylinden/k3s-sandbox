@@ -30,7 +30,8 @@ All nodes are named according to the scheme - `k3s-node-N`, where `N` is the
 node number. And IP address assigned to `eth1` network interface attached to
 VirtualBox private network is set to `192.168.56.(100 + N)`.
 
-> **NOTE:** If there is already host-only interface assigned to 192.168.56.0/24
+> [!NOTE]
+> If there is already host-only interface assigned to 192.168.56.0/24
 > address space, there can be some connectivity problems between virtual
 > machines created by Vagrant ([#1][issue-1]).
 
