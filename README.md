@@ -1,6 +1,7 @@
-# k3s-sandbox
+# K3s Sandbox
 
-[![k3s-sandbox.jpg](docs/banner.jpg)](https://unsplash.com/photos/KU3lOAiP-tQ)
+[![k3s-sandbox.jpg](docs/banner.jpg)](https://unsplash.com/photos/KU3lOAiP-tQ)  
+<sub>Photo by [Markus Spiske](https://unsplash.com/@markusspiske) on [Unsplash](https://unsplash.com/)</sub>
 
 [![stability: experimental](https://masterminds.github.io/stability/experimental.svg)](https://masterminds.github.io/stability/experimental.html)
 ![platform: linux-64](https://img.shields.io/badge/platform-linux--64-lightgrey)
