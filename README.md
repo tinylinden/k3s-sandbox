@@ -36,8 +36,7 @@ VirtualBox private network is set to `192.168.56.(100 + N)`.
 > address space, there can be some connectivity problems between virtual
 > machines created by Vagrant ([#1][issue-1]).
 
-![k3s-nodes](docs/light/k3s-nodes.png#gh-light-mode-only)
-![k3s-nodes](docs/dark/k3s-nodes.png#gh-dark-mode-only)
+![k3s-nodes](docs/k3s-nodes.png)
 
 ### Prerequisites
 
